@@ -23,10 +23,7 @@ var orm = {
 		var columnString = column.toString();
 		var valuesString = "'"+values +"'";
 		var queryString = 'INSERT INTO ' + table + ' (' + columnString + ') ' + 'VALUES(' + "'" + values + "'" + ');'
-		//TIPS:
-		//mysql insert query: INSERT INTO [table] ([column], [column]) VALUES ('[value]', [value]');
-		//'[value]' = "'" + value + "'";
-		//string type needs " ", and input into mysql needs another "": which ""stringtype"
+		
 		console.log(queryString)
 
 		connection.query(queryString, values, function (err, result) {
@@ -34,11 +31,8 @@ var orm = {
 			cb(result);
 		});
 	},
-		// objColVals would be the columns and values that you want to update
-		// an example of objColVals would be {name: panther, sleepy: true}
+		
 	update: function  (table, column,newValue,condition, cb) {
-
-		//UPDATE `burgers_db`.`burgers` SET `burger_name`='lz' WHERE `id`='5';
 
 		var queryString = 'UPDATE ' + table + ' SET ' + column + '=' + newValue + ' WHERE ' + condition + ';'
 
