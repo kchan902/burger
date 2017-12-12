@@ -7,6 +7,9 @@
     "type": "git",
     "url": "git+https://github.com/kchan902/burger.git"
   },
+  "scripts": {
+    "start": "node server.js"
+  },
   "keywords": [
     "burger"
   ],
